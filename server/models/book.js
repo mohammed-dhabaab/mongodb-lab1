@@ -10,6 +10,7 @@ const bookSchema = new mongoose.Schema({
     price: { type: String, required: true, trim: true },
     languages: { type: Array, required: true },
     classification: { type: String, required: true },
+    author: { type: mongoose.Schema.Types.ObjectId, ref: 'Author', required: true },
 }, { timestamps: true });
 
 export default mongoose.model('Book', bookSchema);
